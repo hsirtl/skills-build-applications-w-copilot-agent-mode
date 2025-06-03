@@ -1,3 +1,4 @@
+// Codespace Django REST API endpoint suffix: -8000.app.github.dev
 // React component to display user activities
 import React, { useEffect, useState } from 'react';
 
