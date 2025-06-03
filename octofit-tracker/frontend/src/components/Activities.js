@@ -1,3 +1,4 @@
+// React component to display user activities
 import React, { useEffect, useState } from 'react';
 
 function Activities() {
