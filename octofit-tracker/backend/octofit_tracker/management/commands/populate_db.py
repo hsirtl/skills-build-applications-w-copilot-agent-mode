@@ -1,3 +1,5 @@
+# This script populates test data for users, teams, activities, leaderboard, and workouts collections in octofit_db.
+
 from django.core.management.base import BaseCommand
 from octofit_tracker.models import User, Team, Activity, Leaderboard, Workout
 
