@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from octofit_tracker.models import User, Team, TeamMember, Activity, Leaderboard, Workout
+from octofit_tracker.models import User, Team, Activity, Leaderboard, Workout
 
 class Command(BaseCommand):
     help = 'Populate the octofit_db database with test data.'
@@ -17,13 +17,13 @@ class Command(BaseCommand):
         user2 = User.objects.create(email='bob@example.com', name='Bob', password='bobpass')
         user3 = User.objects.create(email='carol@example.com', name='Carol', password='carolpass')
 
-        # Teams (using TeamMember embedded model)
+        # Teams (using plain dicts for members)
         team1 = Team.objects.create(name='Team Alpha', members=[
-            TeamMember(email=user1.email, name=user1.name),
-            TeamMember(email=user2.email, name=user2.name)
+            {"email": user1.email, "name": user1.name},
+            {"email": user2.email, "name": user2.name}
         ])
         team2 = Team.objects.create(name='Team Beta', members=[
-            TeamMember(email=user3.email, name=user3.name)
+            {"email": user3.email, "name": user3.name}
         ])
 
         # Activities (reference by user email)
